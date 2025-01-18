@@ -67,7 +67,7 @@ Você pode acessar o código fonte do projeto clicando [aqui](https://github.com
 Para baixar e rodar o projeto localmente:
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/amigo-secreto.git
+   git clone https://github.com/Like-a-stone/Desafio-Amigo-Secreto.git
    ```
 2. Abra o arquivo `index.html` no navegador.
 
