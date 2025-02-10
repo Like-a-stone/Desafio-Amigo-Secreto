@@ -9,12 +9,27 @@ function adicionarAmigo(){
     let nome = document.getElementById('amigo').value;
     if(nome.trim() == ""){
         alert("Digite o nome de um amigo!")
-    } else {
-        
-        let novoItem = document.createElement("li");
-        novoItem.textContent = nome;
-        listaAmigos.appendChild(novoItem);
+    }else {
+        if (amigoEstaNaLista(nome)){
+            alert("Esse amigo já está na lista!")
+        }else{
+            let novoItem = document.createElement("li");
+            novoItem.textContent = nome;
+            listaAmigos.appendChild(novoItem)
+        }
     }
+}
+
+function amigoEstaNaLista(amigo){
+    if (listaAmigos.length == 0) return false;
+    
+    const amigos = listaAmigos.children;
+    for (i = 0; i < amigos.length; i++){
+
+        if(amigos[i].textContent == amigo) return true;
+    }
+
+    return false;
 }
 
 function sortearAmigo(){
