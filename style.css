@@ -6,9 +6,10 @@
     --color-button-hover: #e55720;
     --color-text: #444444;
     --color-white: #FFFFFF;
+    --font-primary: 'Merriweather', serif;
+    --font-secondary: 'Inter', sans-serif;
 }
 
-/* Estilos gerais */
 * {
     margin: 0;
     padding: 0;
@@ -16,149 +17,168 @@
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
     background-color: var(--color-primary);
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: var(--font-secondary);
+    color: var(--color-text);
 }
 
 .main-content {
     display: flex;
     flex-direction: column;
-    height: 100%;
     width: 100%;
+    max-width: 800px;
+    margin: 20px;
 }
 
-/* Banner */
 .header-banner {
-    flex: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 0 0;
+    gap: 20px;
+    padding: 40px 0;
 }
 
-/* Seção de entrada */
+.header-banner img {
+    max-width: 100%;
+    height: auto;
+}
+
 .input-section {
-    flex: 60%;
     background-color: var(--color-secondary);
-    border: 1px solid #000;
-    border-radius: 64px 64px 0 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    width: 100%;
+    border-radius: 30px;
+    padding: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Títulos */
 .main-title {
-    font-size: 48px;
-    font-family: "Merriweather", serif;
+    font-size: clamp(36px, 5vw, 48px);
+    font-family: var(--font-primary);
     font-weight: 900;
     font-style: italic;
     color: var(--color-white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .section-title {
-    font-family: "Inter", serif;
-    font-size: 36px;
+    font-family: var(--font-primary);
+    font-size: clamp(24px, 4vw, 36px);
     font-weight: 700;
     color: var(--color-primary);
-    margin: 10px 0;
+    margin-bottom: 20px;
     text-align: center;
 }
 
-/* Contêineres de entrada e botão */
 .input-wrapper {
     display: flex;
     justify-content: center;
     width: 100%;
     max-width: 600px;
-    margin-top: 20px;
+    margin: 0 auto 20px;
 }
 
 .input-name {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid #000;
-    border-radius: 25px 0 0 25px;
-    font-size: 16px;
-}
-
-.button-container {
-    display: flex;
-    gap: 10px;
-    width: 300px;
-    justify-content: center;
-}
-
-/* Estilos de entrada de texto */
-.input-title {
-    flex: 1;
-    padding: 10px 15px;
-    font-size: 16px;
-    border: 2px solid #333;
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: 2px solid var(--color-primary);
     border-right: none;
     border-radius: 25px 0 0 25px;
-    font-family: "Merriweather", serif;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-/* Estilos de botão */
-button {
-    padding: 15px 30px;
-    font-family: "Inter", sans-serif;
     font-size: 16px;
-    border: 2px solid #000;
-    border-radius: 25px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
+    font-family: var(--font-secondary);
 }
 
 .button-add {
+    padding: 12px 20px;
     background-color: var(--color-tertiary);
     color: var(--color-text);
+    border: 2px solid var(--color-primary);
     border-radius: 0 25px 25px 0;
+    font-family: var(--font-secondary);
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .button-add:hover {
     background-color: #a1a1a1;
 }
 
-/* Listas */
-ul {
+.name-list, .result-list {
     list-style-type: none;
-    color: var(--color-text);
-    font-family: "Inter", sans-serif;
-    font-size: 18px;
     margin: 20px 0;
-}
-
-.result-list {
-    margin-top: 15px;
-    color: #05DF05;
-    font-size: 22px;
-    font-weight: bold;
+    padding: 0;
     text-align: center;
 }
 
-/* Botão de sortear título */
+.name-list li {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.result-list {
+    color: #fe652b;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
 .button-draw {
     display: flex;
     align-items: center;
-    width: 100%;
-    padding: 10px 40px;
+    justify-content: center;
+    padding: 12px 25px;
     color: var(--color-white);
     background-color: var(--color-button);
+    border: none;
+    border-radius: 25px;
     font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .button-draw img {
-    margin-right: 40px;
+    margin-right: 10px;
+    width: 24px;
+    height: 24px;
 }
 
 .button-draw:hover {
     background-color: var(--color-button-hover);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+    .header-banner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .input-wrapper {
+        flex-direction: column;
+    }
+
+    .input-name, .button-add {
+        width: 100%;
+        border-radius: 25px;
+        margin-bottom: 10px;
+    }
+
+    .button-container {
+        flex-direction: column;
+    }
+
+    .button-draw {
+        width: 100%;
+    }
 }
