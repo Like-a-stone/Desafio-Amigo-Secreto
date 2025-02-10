@@ -13,7 +13,7 @@ function adicionarAmigo(){
         
     let novoItem = document.createElement("li");
     novoItem.textContent = nome;
-    listaAmigos.appendChild(novoItem)
+    listaAmigos.appendChild(novoItem);
 }
 
 function amigoEstaNaLista(amigo){
@@ -44,7 +44,7 @@ function sortearAmigo(){
     listaDeAmigosEscolhidos.push(amigoAleatorio);
     pilhaAmigosSorteados.push(amigoAleatorio);
     ultimoAmigoSoteardo = amigoAleatorio;
-    mostrarResultado (`O amigo secreto sorteado é :${ultimoAmigoSoteardo}`);
+    mostrarResultado (`O amigo secreto sorteado é : ${ultimoAmigoSoteardo}`);
     revelarBtnEuSou();
 }
 
@@ -72,9 +72,9 @@ function desfazerUltimoSorteio(){
 
 function revelarBtnEuSou(){
     let btnEuSou = document.getElementById('btnEuSou');
+    btnEuSou.textContent = `Epa! Eu sou ${ultimoAmigoSoteardo}`;
     if (btnEuSou.classList.contains('hidden-button')){
         btnEuSou.classList.replace('hidden-button', 'button-draw');
-        btnEuSou.textContent = `Epa! Eu sou ${ultimoAmigoSoteardo}`;
     }
 }
 
