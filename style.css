@@ -158,6 +158,10 @@ body {
     transform: translateY(-2px);
 }
 
+.hidden-button {
+    display: none;
+}
+
 @media (max-width: 600px) {
     .header-banner {
         flex-direction: column;
